@@ -249,13 +249,6 @@ ingested.
 | `OPENAI_API_KEY` errors | Make sure `.env` is populated and you ran `cp .env.example .env` (not just edited the example) |
 | Docker build is slow | The Dockerfile pre-downloads embedding/reranker models at build time — this is a one-time cost baked into the image layer |
 
----
-
-## 8. What to point to in an interview
-
-- **Ingestion is idempotent**: each chunk gets a content hash; re-running `ingest.py` only re-embeds changed chunks (see `embed.py`).
-- **Retrieval is two-stage**: FAISS ANN search over-fetches (top 20), then a cross-encoder reranker narrows to top 5 — the standard retrieve-then-rerank pattern.
-- **Citations are enforced structurally**: the LLM returns JSON `{answer, citations: [chunk numbers]}` rather than free-text citations, and `generator.py` resolves/validates them against real chunks — out-of-range citation numbers get dropped, not trusted.
 - **Grounding guardrail**: the system prompt explicitly instructs the model to say it doesn't know if the context doesn't contain the answer — and the golden eval set has a question specifically designed to test this.
 - **Evaluation is split by stage**: RAGAS metrics separate retrieval quality (`context_precision`/`recall`) from generation quality (`faithfulness`/`answer_relevancy`) so regressions can be localized.
 - **Swap points for scale**: FAISS → Pinecone/Qdrant/Milvus for sharding + metadata filtering; single-process `ingest.py` → Airflow DAG or Kafka consumer for millions of docs; local sentence-transformers → hosted embedding API for throughput.
