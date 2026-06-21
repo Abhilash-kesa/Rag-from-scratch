@@ -1,0 +1,26 @@
+[
+  {
+    "question": "What is the difference between an asset and a liability?",
+    "ground_truth": "An asset is something that puts money in your pocket, while a liability is something that takes money out of your pocket."
+  },
+  {
+    "question": "Who are Rich Dad and Poor Dad?",
+    "ground_truth": "Rich Dad and Poor Dad are the author's two father figures used to contrast two different mindsets about money and education -- one financially educated and entrepreneurial, the other formally educated but financially conventional."
+  },
+  {
+    "question": "What does the book say about financial literacy?",
+    "ground_truth": "The book argues that financial literacy, not just a high income or formal education, is what determines whether someone builds wealth, since most people are never taught how money actually works."
+  },
+  {
+    "question": "What is the rat race the book describes?",
+    "ground_truth": "The rat race is the cycle of working for a paycheck to pay off rising expenses and debts, trapping people in a loop where earning more doesn't lead to financial freedom."
+  },
+  {
+    "question": "What does the book recommend instead of working only for money?",
+    "ground_truth": "The book recommends acquiring and building income-generating assets, such as real estate, businesses, and investments, so that money works for you instead of trading time for a paycheck."
+  },
+  {
+    "question": "What is the warranty period for electronics mentioned in the book?",
+    "ground_truth": "This information is not present in the book."
+  }
+]

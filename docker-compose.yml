@@ -1,0 +1,11 @@
+services:
+  rag-api:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/code/data   # persist uploaded docs + FAISS index across restarts
+    command: >
+      sh -c "python scripts/ingest.py && uvicorn app.main:app --host 0.0.0.0 --port 8000"

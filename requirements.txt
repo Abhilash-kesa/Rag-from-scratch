@@ -1,0 +1,16 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+sentence-transformers==3.1.1
+faiss-cpu==1.8.0.post1
+pypdf==4.3.1
+openai==1.51.0
+python-dotenv==1.0.1
+pydantic==2.9.2
+numpy==1.26.4
+
+# eval
+tenacity==9.0.0
+ragas==0.2.8
+datasets==3.0.1
+langchain-openai==0.2.2
+langchain-huggingface==0.1.2

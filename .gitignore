@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+.env
+data/uploads/*
+!data/uploads/.gitkeep
+!data/uploads/sample.txt
+data/index/
+eval/last_run_results.json
+.DS_Store
+*.log
